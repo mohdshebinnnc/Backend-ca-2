@@ -26,13 +26,11 @@ app.post("/user",async(req,res) =>{
         if(!password || password.length<8||password.length>16){
             return res.json({"message":"the length should be greater than 8 and less than 16"})
         }
-        
-        const user = new userModel({username,email,password,dateOfBirth})
-        await user.save()
-        res.send("Sign up successfull")
+
+        res.status(201).json("snd succes")
         
     }catch (error) {
-        console.log(err)
+        console.log(error)
         res.send("Something went wrong,pls try again later")
     }
 
