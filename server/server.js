@@ -2,14 +2,15 @@ const express=require("express")
 const cors=require("cors")
 const userModel=require("./models/Post")
 
-const PORT=8888
+const PORT=8080
 const app=express()
 app.use(express.json())
 app.use(cors())
 
 
 app.get("/",(req,res) =>{
-    console.log("sign-up Successfull")
+    console.log("sign-up Successfull");
+    res.send("Hello")
 })
 
 app.post("/user",async(req,res) =>{
